@@ -1,0 +1,26 @@
+{
+  "full_model": {
+    "station_name": "东城天坛",
+    "mae": 8.228822,
+    "rmse": 14.483551,
+    "r2": 0.810278
+  },
+  "w_o_spatial": {
+    "station_name": "东城天坛",
+    "mae": 9.006512,
+    "rmse": 15.230968,
+    "r2": 0.790191
+  },
+  "w_o_temporal": {
+    "station_name": "东城天坛",
+    "mae": 9.994585,
+    "rmse": 16.792475,
+    "r2": 0.744966
+  },
+  "w_o_dynamic_graph": {
+    "station_name": "东城天坛",
+    "mae": 8.690722,
+    "rmse": 14.794282,
+    "r2": 0.80205
+  }
+}

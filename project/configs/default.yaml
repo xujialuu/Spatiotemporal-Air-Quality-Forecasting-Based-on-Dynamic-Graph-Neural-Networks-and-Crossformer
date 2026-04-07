@@ -1,0 +1,55 @@
+﻿seed: 42
+device: auto
+output_dir: outputs
+
+data:
+  root_dir: ../station_csv_no_empty_cols
+  coords_file: ../北京市站点列表-2021.01.23起.xlsx
+  batch_size: 32
+  input_length: 24
+  pred_length: 6
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  target_features:
+    - PM2.5
+  feature_columns:
+    PM2.5: PM2.5
+    PM10: PM10
+    NO2: NO2
+    SO2: SO2
+    O3: O3
+    CO: CO
+    temperature: air_temperature_c
+    dew_point: dew_point_c
+    pressure: sea_level_pressure_hpa
+    wind_speed: wind_speed_m_s
+    wind_direction: wind_direction_deg
+    precipitation: precip_1h_mm
+  missing_strategy: interpolate_ffill
+  num_workers: 0
+
+model:
+  spatial_hidden_dim: 16
+  spatial_dropout: 0.1
+  spatial_agg: last
+  sigma: 35.0
+  top_k: 8
+  add_self_loop: true
+  patch_len: 4
+  d_model: 128
+  num_heads: 4
+  num_layers: 2
+  temporal_ffn_dim: 256
+  temporal_dropout: 0.1
+  fusion_hidden_dim: 64
+
+train:
+  max_epochs: 150
+  lr: 0.0003
+  weight_decay: 0.0
+  patience: 12
+  checkpoint_name: best_model.pt
+  alpha: 0.2
+  beta: 0.2
+  gamma: 0.6

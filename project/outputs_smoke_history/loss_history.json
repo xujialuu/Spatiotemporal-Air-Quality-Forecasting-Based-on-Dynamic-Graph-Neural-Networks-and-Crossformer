@@ -1,0 +1,30 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.5419884622097015,
+    "train_gnn_loss": 0.6188187599182129,
+    "train_crossformer_loss": 0.5180756039917469,
+    "train_fusion_loss": 0.5243492946028709,
+    "val_loss": 0.582402765750885,
+    "val_gnn_loss": 0.8211960196495056,
+    "val_crossformer_loss": 0.22752711176872253,
+    "val_fusion_loss": 0.6210968196392059,
+    "val_mae": 0.7769891023635864,
+    "val_rmse": 0.7880969643592834,
+    "val_r2": -40.52538299560547
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.47288402169942856,
+    "train_gnn_loss": 0.6114427447319031,
+    "train_crossformer_loss": 0.27319149300456047,
+    "train_fusion_loss": 0.4932619407773018,
+    "val_loss": 0.5225242376327515,
+    "val_gnn_loss": 0.8180342614650726,
+    "val_crossformer_loss": 0.04303181357681751,
+    "val_fusion_loss": 0.58385169506073,
+    "val_mae": 0.752600371837616,
+    "val_rmse": 0.7641018629074097,
+    "val_r2": -38.035240173339844
+  }
+]
