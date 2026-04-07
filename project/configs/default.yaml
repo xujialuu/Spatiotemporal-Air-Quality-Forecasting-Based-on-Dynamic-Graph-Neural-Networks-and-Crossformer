@@ -3,8 +3,8 @@ device: auto
 output_dir: outputs
 
 data:
-  root_dir: ../station_csv_no_empty_cols
-  coords_file: ../北京市站点列表-2021.01.23起.xlsx
+  root_dir: F:/data_for_BNU/beijing_20250101-20251231/station_csv_no_empty_cols
+  coords_file: F:/data_for_BNU/beijing_20250101-20251231/北京市站点列表-2021.01.23起.xlsx
   batch_size: 32
   input_length: 24
   pred_length: 6

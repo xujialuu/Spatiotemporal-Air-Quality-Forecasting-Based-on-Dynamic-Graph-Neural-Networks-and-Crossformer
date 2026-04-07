@@ -1,4 +1,4 @@
-﻿"""Minimal trainer with early stopping, checkpointing, and loss history export."""
+"""Minimal trainer with early stopping, checkpointing, and loss history export."""
 
 from __future__ import annotations
 

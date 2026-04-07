@@ -1,0 +1,60 @@
+﻿seed: 42
+device: auto
+output_dir: outputs
+
+experiment:
+  name: baseline_compare
+  model_name: lstm
+
+runtime:
+  batch_size_overrides:
+    lstm: 32
+    gru: 32
+    gcn: 32
+
+data:
+  root_dir: F:/data_for_BNU/beijing_20250101-20251231/station_csv_no_empty_cols
+  coords_file: F:/data_for_BNU/beijing_20250101-20251231/北京市站点列表-2021.01.23起.xlsx
+  batch_size: 32
+  input_length: 24
+  pred_length: 6
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  target_features:
+    - PM2.5
+  feature_columns:
+    PM2.5: PM2.5
+    PM10: PM10
+    NO2: NO2
+    SO2: SO2
+    O3: O3
+    CO: CO
+    temperature: air_temperature_c
+    dew_point: dew_point_c
+    pressure: sea_level_pressure_hpa
+    wind_speed: wind_speed_m_s
+    wind_direction: wind_direction_deg
+    precipitation: precip_1h_mm
+  missing_strategy: interpolate_ffill
+  num_workers: 0
+
+model:
+  lstm_hidden_dim: 128
+  lstm_num_layers: 2
+  lstm_dropout: 0.1
+  gru_hidden_dim: 128
+  gru_num_layers: 2
+  gru_dropout: 0.1
+  gcn_hidden_dim: 32
+  gcn_dropout: 0.1
+  sigma: 35.0
+  top_k: 8
+  add_self_loop: true
+
+train:
+  max_epochs: 150
+  lr: 0.0003
+  weight_decay: 0.0
+  patience: 12
+  checkpoint_name: best_model.pt

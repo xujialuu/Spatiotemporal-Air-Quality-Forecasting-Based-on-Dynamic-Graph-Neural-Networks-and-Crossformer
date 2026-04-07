@@ -1,4 +1,4 @@
-﻿"""Run one ablation experiment or collect all results with full_model reused from outputs/."""
+"""Run one ablation experiment or collect all results with full_model reused from outputs/."""
 
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import copy
 import json
@@ -179,13 +179,7 @@ def plot_curves(metrics_by_model: dict[str, dict[str, object]], max_points: int 
         source_name = DISPLAY_SOURCE[model_name]
         ax.plot(x, metrics_by_model[source_name]["true_series"][:total_points], color="#222222", linewidth=1.8, label="Ground truth")
         ax.plot(x, metrics_by_model[source_name]["pred_series"][:total_points], color=MODEL_COLORS[model_name], linewidth=1.6, label="Prediction")
-        ax.set_title(
-            f"{PANEL_LABELS[model_name]} {MODEL_LABELS[model_name]}\n"
-            f"MAE={metrics_by_model[source_name]['mae']:.2f}, "
-            f"RMSE={metrics_by_model[source_name]['rmse']:.2f}, "
-            f"R²={metrics_by_model[source_name]['r2']:.3f}",
-            fontsize=11,
-        )
+        ax.set_title(f"{PANEL_LABELS[model_name]} {MODEL_LABELS[model_name]}", fontsize=11)
         ax.set_xlim(1, total_points)
         ax.set_ylim(y_min - pad, y_max + pad)
         ax.set_xlabel("Forecast point")
